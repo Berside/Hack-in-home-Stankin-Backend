@@ -11,5 +11,6 @@ __pycache__
 .venv
 .mypy_cache
 *.pot
+src/static/uploaded
 temp/
 src/config/config.env

@@ -26,6 +26,4 @@ class SegmentationService:
             'path_to_file': jpg_path
         }
 
-        print(res)
-
         return res

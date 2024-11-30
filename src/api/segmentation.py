@@ -14,7 +14,7 @@ SEGMENTATION_ROUTER = APIRouter(prefix='/segmentation')
 
 
 @SEGMENTATION_ROUTER.post('/')
-def segment_model(segment_service: SegmentationServiceDependency, car_image: UploadFile = File(...)):
+def segment_model(car_image: UploadFile, segment_service: SegmentationServiceDependency):
     uploaded_file_name = 'static/uploaded/' + ''.join(random.choices(string.ascii_uppercase + string.ascii_lowercase + string.digits, k=8)) + '.jpg'
     with open(os.path.join(settings.APP_DIR, uploaded_file_name), "wb") as buffer:
         shutil.copyfileobj(car_image.file, buffer)
